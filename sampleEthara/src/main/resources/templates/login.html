@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<h2>Login</h2>
+
+<p th:if="${param.error}" style="color:red">
+    Invalid username or password
+</p>
+
+<form action="/login" method="post">
+    <input type="text" name="username" placeholder="Username"/><br>
+    <input type="password" name="password" placeholder="Password"/><br>
+    <button type="submit">Login</button>
+</form>
+
+<a href="/signup">Signup</a>
+</html>

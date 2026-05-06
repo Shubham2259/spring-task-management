@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<h1>Dashboard</h1>
+
+<a href="/logout">Logout</a>
+
+<h2>Add Project</h2>
+<form action="/addProject" method="post">
+    <input type="text" name="name"/>
+    <button>Add</button>
+</form>
+
+<h2>Add Task</h2>
+<form action="/addTask" method="post">
+    <input type="text" name="title"/>
+    <input type="text" name="status"/>
+    <input type="date" name="dueDate"/>
+    <button>Add</button>
+</form>
+
+<h2>Tasks</h2>
+<div th:each="t : ${tasks}">
+    <p th:text="${t.title}"></p>
+    <p th:text="${t.status}"></p>
+</div>
+
+<h3>Completed: <span th:text="${completed}"></span></h3>
+<h3>Overdue: <span th:text="${overdue}"></span></h3>
+</html>
